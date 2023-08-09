@@ -53,6 +53,8 @@ function getUserNumber() {
     }
 
 function playRound() {
+        var i = 1
+        do {  
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
             console.log("Computer choice is: " + computerNumber)
@@ -76,11 +78,14 @@ function playRound() {
             console.log(gameMessage)
             console.log("Player score is: " + playerScore)
             console.log("Computer score is: " + computerScore)
-            return(gameMessage)
+            i++
+            console.log("Games played: " + i)  
+        }
+        while(i < 6)
+        return("Game over!")
         }
 
-playRound()
-playRound()
+
     
         
 
