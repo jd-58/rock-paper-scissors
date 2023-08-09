@@ -1,46 +1,48 @@
-
-function playRound(playerSelection, ComputerSelection) {
+function playRound(playerSelection, computerChoice) {
     let gameMessage = "N/A"
+    computerChoice = getComputerChoice()
+    console.log(computerChoice)
+    playerSelection = prompt("Choose rock, paper, or scissors: ", "n/a")
     playerSelection = playerSelection.toLowerCase()
-    computerSelection = computerSelection.toLowerCase()
-    if (playerSelection = "rock" && (computerSelection = "rock")) {
-        gameMessage = "You tied!"
-        return gameMessage()
-    }
-    else if (playerSelection = "rock" && (computerSelection = "paper")) {
-        gameMessage = "You lost! Paper beats rock."
-        return gameMessage()
-    }
-    else if (playerSelection = "rock" && (computerSelection = "scissors")) {
+    if (playerSelection == "rock" && (computerChoice == "scissors")) {
         gameMessage = "You win! Rock beats paper."
-        return gameMessage()
+        return (gameMessage)
     }
-    else if (playerSelection = "paper" && (computerSelection = "rock")) {
+    else if (playerSelection == "rock" && (computerChoice == "paper")) {
+        gameMessage = "You lost! Paper beats rock."
+        return (gameMessage)
+    }
+    else if (playerSelection == "rock" && (computerChoice == "rock")) {
+        gameMessage = "You tied!"
+        return (gameMessage)
+    }
+    else if (playerSelection == "paper" && (computerChoice == "paper")) {
+        gameMessage = "You tied!"
+        return (gameMessage)
+    }
+    else if (playerSelection == "paper" && (computerChoice == "rock")) {
         gameMessage = "You win! Paper beats rock."
-        return gameMessage()
+        return (gameMessage)
     }
-    else if (playerSelection = "paper" && (computerSelection = "paper")) {
-        gameMessage = "You tied!"
-        return gameMessage()
-    }
-    else if (playerSelection = "paper" && (computerSelection = "scissors")) {
+    else if (playerSelection == "paper" && (computerChoice == "scissors")) {
         gameMessage = "You lost! Scissors beats paper."
-        return gameMessage()
+        return (gameMessage)
     }
-    else if (playerSelection = "scissors" && (computerSelection = "rock")) {
+    else if (playerSelection == "scissors" && (computerChoice == "rock")) {
         gameMessage = "You lost! Rock beats scissors."
-        return gameMessage()
+        return (gameMessage)
     }
-    else if (playerSelection = "scissors" && (computerSelection = "paper")) {
+    else if (playerSelection == "scissors" && (computerChoice == "paper")) {
         gameMessage = "You win! Scissors beats paper."
-        return gameMessage()
+        return (gameMessage)
     }
-    else if (playerSelection = "scissors" && (computerSelection = "scissors")) {
+    else if (playerSelection == "scissors" && (computerChoice == "scissors")) {
         gameMessage = "You tied!"
-        return gameMessage()
+        return (gameMessage)
     }
     else {
         gameMessage = "Error!"
-        return gameMessage()
+        return (gameMessage)
     }
+    
 }
