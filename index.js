@@ -4,7 +4,7 @@
 
 
 const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
-messages = ["You won!", "You lost", "It's a tie!", "Error"]
+messages = ["You won!", "You lost!", "It's a tie!", "Error"]
 let result                                       
 let playerNumber
 let computerNumber
@@ -35,18 +35,18 @@ function getResult() {
             return(result)
         }
         }
-function getUserNumber() {
-        playerSelection = prompt("Choose rock, paper, or scissors: ")
-        playerSelection = playerSelection.toLowerCase()
-            if (playerSelection == moves[0]) {
+function getUserChoice() {
+        playerChoice = prompt("Choose rock, paper, or scissors: ")
+        playerChoice = playerChoice.toLowerCase()
+            if (playerChoice == moves[0]) {
                 playerNumber = 0 // rock
                 return(playerNumber)
             }
-            else if (playerSelection == moves[1]) {
+            else if (playerChoice == moves[1]) {
                 playerNumber = 1 // paper
                 return(playerNumber)
             }
-            else if (playerSelection == moves[2]) {
+            else if (playerChoice == moves[2]) {
                 playerNumber = 2 // scissors
                 return(playerNumber)
             }
@@ -62,7 +62,7 @@ function playGame() {
         do {  
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
-            playerNumber = getUserNumber()
+            playerNumber = getUserChoice()
             result = getResult()
             if (result == 1) {
                 gameMessage = messages[0]
