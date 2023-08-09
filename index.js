@@ -3,9 +3,9 @@
 
 
 
-const moves = ["rock", "paper", "scissors"] // 0 for rock, 1 for paper, 2 for scissors
-messages = ["You won!", "You lost", "It's a tie!"]
-let result                                       // 3 is a placeholder that cannot happen in the game, for debugging purposes
+const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
+messages = ["You won!", "You lost", "It's a tie!", "Error"]
+let result                                       
 let playerNumber
 let computerNumber
 let playerScore = 0
@@ -23,6 +23,10 @@ function getResult() {
         else if (playerNumber == ((computerNumber + 1) %3)) {
             result = 1 // player wins
             playerScore += 1
+            return(result)
+        }
+        else if (playerNumber == 3) {
+            result = 3
             return(result)
         }
         else {
