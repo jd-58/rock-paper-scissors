@@ -52,16 +52,14 @@ function getUserNumber() {
             }
     }
 
-function playRound() {
-        var i = 1
+function playGame() {
+        console.log("Let's play rock paper scissors! The game will last 5 turns.")
+        var i = 0
         do {  
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
-            console.log("Computer choice is: " + computerNumber)
             playerNumber = getUserNumber()
-            console.log("Player choice is: " + playerNumber)
             result = getResult()
-            console.log(getResult)
             if (result == 1) {
                 gameMessage = messages[0]
             }
@@ -74,14 +72,13 @@ function playRound() {
             else {
                 gameMessage = messages[3]
             }
-            console.log("Result is: " + result)
-            console.log(gameMessage)
+            console.log(gameMessage + " You chose " + moves[playerNumber] + ", and the computer chose " + moves[computerNumber] + ".")
             console.log("Player score is: " + playerScore)
             console.log("Computer score is: " + computerScore)
             i++
             console.log("Games played: " + i)  
         }
-        while(i < 6)
+        while(i < 5)
         return("Game over!")
         }
 
