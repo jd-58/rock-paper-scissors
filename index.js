@@ -1,7 +1,29 @@
 
+const buttons = document.querySelector('#buttons')
 
+const rockButton = document.createElement('button')
+rockButton.classList.add('rockButton')
+rockButton.textContent = "Rock"
+buttons.appendChild(rockButton)
+rockButton.addEventListener('click', () => {
+    playGame(0)
+})
 
+const paperButton = document.createElement('button')
+paperButton.classList.add('paperButton')
+paperButton.textContent = "Paper"
+buttons.appendChild(paperButton)
+paperButton.addEventListener('click', () => {
+    playGame(1)
+})
 
+const scissorButton = document.createElement('button')
+scissorButton.classList.add('scissorButton')
+scissorButton.textContent = "Scissors"
+buttons.appendChild(scissorButton)
+scissorButton.addEventListener('click', () => {
+    playGame(2)
+})
 
 const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
 messages = ["You won!", "You lost!", "It's a tie!", "Error"]
@@ -56,13 +78,10 @@ function getUserChoice() {
             }
     }
 
-function playGame() {
-        console.log("Let's play rock paper scissors! The game will last 5 turns.")
-        var i = 0
-        do {  
+function playGame(playerNumber) {
+   
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
-            playerNumber = getUserChoice()
             result = getResult()
             if (result == 1) {
                 gameMessage = messages[0]
@@ -81,9 +100,9 @@ function playGame() {
             console.log("Computer score is: " + computerScore)
             i++
             console.log("Games played: " + i)  
-        }
-        while(i < 5)
-        return("Game over!")
+        
+        // while(i < 5)
+        
         }
 
 
