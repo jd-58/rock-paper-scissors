@@ -1,0 +1,26 @@
+
+.text {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.buttonContainer {
+    display: flex;
+    color: red;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    display: flex;
+    color: green;
+    margin: 20px
+}
+
+.resultsDiv {
+    display: flex;
+}
+
+
+
