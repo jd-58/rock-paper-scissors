@@ -29,7 +29,6 @@ scoreDiv.appendChild(resultDisplay)
 
 
 rockButton.classList.add('rockButton')
-rockButton.textContent = "Rock"
 rockButton.addEventListener('click', () => {
     document.getElementById("tieDiv").style.display = "none"
     playGame(0)
@@ -46,7 +45,7 @@ rockButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score" + "\\\n" +  "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
@@ -57,8 +56,6 @@ rockButton.addEventListener('click', () => {
 
 
 paperButton.classList.add('paperButton')
-paperButton.textContent = "Paper"
-
 paperButton.addEventListener('click', () => {
     document.getElementById("tieDiv").style.display = "none"
     playGame(1)
@@ -75,7 +72,7 @@ paperButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score" + "\\\n" + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
@@ -86,8 +83,6 @@ paperButton.addEventListener('click', () => {
 
 
 scissorButton.classList.add('scissorButton')
-scissorButton.textContent = "Scissors"
-
 scissorButton.addEventListener('click', () => {
     document.getElementById("tieDiv").style.display = "none"
     playGame(2)
@@ -104,7 +99,7 @@ scissorButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score" + "\\\n" + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
