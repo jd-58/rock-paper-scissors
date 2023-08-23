@@ -33,10 +33,10 @@ rockButton.addEventListener('click', () => {
         gameMessage = messages[2]
     }
     else if (result == 1) {
-        gameMessage = messages[1]
+        gameMessage = messages[0]
     }
     else if (result == 0) {
-        gameMessage = messages[0]
+        gameMessage = messages[1]
     }
     else {
         gameMessage = messages[3]
@@ -57,10 +57,10 @@ paperButton.addEventListener('click', () => {
         gameMessage = messages[2]
     }
     else if (result == 1) {
-        gameMessage = messages[1]
+        gameMessage = messages[0]
     }
     else if (result == 0) {
-        gameMessage = messages[0]
+        gameMessage = messages[1]
     }
     else {
         gameMessage = messages[3]
@@ -81,10 +81,10 @@ scissorButton.addEventListener('click', () => {
         gameMessage = messages[2]
     }
     else if (result == 1) {
-        gameMessage = messages[1]
+        gameMessage = messages[0]
     }
     else if (result == 0) {
-        gameMessage = messages[0]
+        gameMessage = messages[1]
     }
     else {
         gameMessage = messages[3]
