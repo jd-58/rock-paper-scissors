@@ -1,5 +1,16 @@
+let playerScore = 0
+let computerScore = 0
 
 const buttons = document.querySelector('#buttons')
+const resultsDiv = document.querySelector('#resultsDiv')
+
+let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+String(resultMessage) 
+const resultDisplay = document.createElement('div')
+resultDisplay.classList.add('resultDisplay')
+resultDisplay.textContent = resultMessage
+resultDisplay.addEventListener
+resultsDiv.appendChild(resultDisplay)
 
 const rockButton = document.createElement('button')
 rockButton.classList.add('rockButton')
@@ -7,6 +18,9 @@ rockButton.textContent = "Rock"
 buttons.appendChild(rockButton)
 rockButton.addEventListener('click', () => {
     playGame(0)
+    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    String(resultMessage) 
+    resultsDiv.textContent = resultMessage
 })
 
 const paperButton = document.createElement('button')
@@ -15,6 +29,9 @@ paperButton.textContent = "Paper"
 buttons.appendChild(paperButton)
 paperButton.addEventListener('click', () => {
     playGame(1)
+    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    String(resultMessage) 
+    resultsDiv.textContent = resultMessage
 })
 
 const scissorButton = document.createElement('button')
@@ -23,21 +40,25 @@ scissorButton.textContent = "Scissors"
 buttons.appendChild(scissorButton)
 scissorButton.addEventListener('click', () => {
     playGame(2)
+    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    String(resultMessage) 
+    resultsDiv.textContent = resultMessage
 })
+
+
 
 const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
 messages = ["You won!", "You lost!", "It's a tie!", "Error"]
 let result                                       
 let playerNumber
 let computerNumber
-let playerScore = 0
-let computerScore = 0
+
 
 function getComputerChoice() {
         const ComputerChoice = Math.floor(Math.random() * 3)
         return (ComputerChoice)
     }
-function getResult() {
+function getResult(playerNumber, computerNumber) {
         if (playerNumber == computerNumber) {
             result = 2 // tie
             return(result)
@@ -79,10 +100,9 @@ function getUserChoice() {
     }
 
 function playGame(playerNumber) {
-   
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
-            result = getResult()
+            result = getResult(playerNumber, computerNumber)
             if (result == 1) {
                 gameMessage = messages[0]
             }
@@ -98,8 +118,8 @@ function playGame(playerNumber) {
             console.log(gameMessage + " You chose " + moves[playerNumber] + ", and the computer chose " + moves[computerNumber] + ".")
             console.log("Player score is: " + playerScore)
             console.log("Computer score is: " + computerScore)
-            i++
-            console.log("Games played: " + i)  
+
+
         
         // while(i < 5)
         
