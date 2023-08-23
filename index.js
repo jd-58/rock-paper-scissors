@@ -1,8 +1,17 @@
 let playerScore = 0
 let computerScore = 0
+let gameMessage = "N/A"
 
 const buttons = document.querySelector('#buttons')
 const resultsDiv = document.querySelector('#resultsDiv')
+const tieDiv = document.querySelector('#tieDiv')
+const choicesDiv = document.querySelector('#choicesDiv')
+
+const tieDisplay = document.createElement('div')
+tieDisplay.classList.add('tieDisplay')
+tieDisplay.textContent = "It's a tie! Choose again."
+tieDiv.appendChild(tieDisplay)
+document.getElementById("tieDiv").style.display = "none"
 
 let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
 String(resultMessage) 
@@ -12,13 +21,27 @@ resultDisplay.textContent = resultMessage
 resultDisplay.addEventListener
 resultsDiv.appendChild(resultDisplay)
 
+
 const rockButton = document.createElement('button')
 rockButton.classList.add('rockButton')
 rockButton.textContent = "Rock"
 buttons.appendChild(rockButton)
 rockButton.addEventListener('click', () => {
+    document.getElementById("tieDiv").style.display = "none"
     playGame(0)
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    if (result == 2) {
+        gameMessage = messages[2]
+    }
+    else if (result == 1) {
+        gameMessage = messages[1]
+    }
+    else if (result == 0) {
+        gameMessage = messages[0]
+    }
+    else {
+        gameMessage = messages[3]
+    }
+    let resultMessage = gameMessage + " Score \n Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     resultsDiv.textContent = resultMessage
 })
@@ -28,8 +51,21 @@ paperButton.classList.add('paperButton')
 paperButton.textContent = "Paper"
 buttons.appendChild(paperButton)
 paperButton.addEventListener('click', () => {
+    document.getElementById("tieDiv").style.display = "none"
     playGame(1)
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    if (result == 2) {
+        gameMessage = messages[2]
+    }
+    else if (result == 1) {
+        gameMessage = messages[1]
+    }
+    else if (result == 0) {
+        gameMessage = messages[0]
+    }
+    else {
+        gameMessage = messages[3]
+    }
+    let resultMessage = gameMessage + " Score \n Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     resultsDiv.textContent = resultMessage
 })
@@ -39,8 +75,21 @@ scissorButton.classList.add('scissorButton')
 scissorButton.textContent = "Scissors"
 buttons.appendChild(scissorButton)
 scissorButton.addEventListener('click', () => {
+    document.getElementById("tieDiv").style.display = "none"
     playGame(2)
-    let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+    if (result == 2) {
+        gameMessage = messages[2]
+    }
+    else if (result == 1) {
+        gameMessage = messages[1]
+    }
+    else if (result == 0) {
+        gameMessage = messages[0]
+    }
+    else {
+        gameMessage = messages[3]
+    }
+    let resultMessage = gameMessage + " Score \n Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     resultsDiv.textContent = resultMessage
 })
@@ -48,7 +97,7 @@ scissorButton.addEventListener('click', () => {
 
 
 const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
-messages = ["You won!", "You lost!", "It's a tie!", "Error"]
+messages = ["You won!", "You lost!", "It's a tie! Chose again.", "Error"]
 let result                                       
 let playerNumber
 let computerNumber
