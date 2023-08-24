@@ -18,7 +18,7 @@ tieDisplay.textContent = "It's a tie! Choose again."
 tieDiv.appendChild(tieDisplay)
 document.getElementById("tieDiv").style.display = "none"
 
-let resultMessage = "Score \n Player: " + playerScore + "\n Computer: " + computerScore
+let resultMessage = "Score | Player: " + playerScore + "\n Computer: " + computerScore
 String(resultMessage) 
 const resultDisplay = document.createElement('div')
 resultDisplay.classList.add('resultDisplay')
@@ -45,7 +45,7 @@ rockButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score" + "\\\n" +  "Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score | " +  "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
@@ -72,7 +72,7 @@ paperButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score" + "\\\n" + "Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score | " + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
@@ -99,7 +99,7 @@ scissorButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
-    let resultMessage = "Score" + "\\\n" + "Player: " + playerScore + "\n Computer: " + computerScore
+    let resultMessage = "Score | " + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
@@ -112,7 +112,7 @@ scissorButton.addEventListener('click', () => {
 
 
 const moves = ["rock", "paper", "scissors", "Error"] // 0 for rock, 1 for paper, 2 for scissors
-messages = ["You won!", "You lost!", "It's a tie! Chose again.", "Error"]
+messages = ["You won!", "You lost!", "It's a tie! Choose again.", "Error"]
 let result                                       
 let playerNumber
 let computerNumber
@@ -188,6 +188,12 @@ function playGame(playerNumber) {
         // while(i < 5)
         
         }
+
+if (playerScore == 5) {
+    gameMessage = "You win the game!"
+    scoreDiv.textContent = resultMessage
+}
+
 
 
     

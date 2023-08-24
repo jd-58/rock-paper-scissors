@@ -2,10 +2,12 @@
 .text {
     display: flex;
     justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
 }
 
 body {
-    background-image: url(images/background1.png);
+    background-image: url(images/background3.jpg);
 }
 .buttonContainer .rockButton {
     background-image: url(images/rock.png);
@@ -24,6 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px;
 }
 
 button {
@@ -34,6 +37,28 @@ button {
     margin: 20px;
     background: none;
     border: 0px;
+    transition: 0.5s;
+}
+
+
+
+button:hover {
+    box-shadow:  0px 0px 5px black;
+}
+
+button:active {
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    transform: scale(0.97);
+}
+
+
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+#title2 {
+    font-size: 20px;
 }
 
 
