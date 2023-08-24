@@ -1,4 +1,4 @@
 # rock-paper-scissors
-My first JavaScript program - a simple rock paper scissors game. Currently played in the console - will update to include
-a UI in future lessons. For now, to play, right click on the page and hit inspect. Then, navigate to the console, and 
-type "playGame()" 
+My first JavaScript program - a rock paper scissors game with a simple UI made with CSS. 
+Click the link below to play!
+https://jd-58.github.io/rock-paper-scissors/
