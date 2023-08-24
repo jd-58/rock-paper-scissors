@@ -8,18 +8,41 @@
 
 body {
     background-image: url(images/background3.jpg);
+    font-family: Arial, Helvetica, sans-serif;
 }
-.buttonContainer .rockButton {
+.buttonContainer #rockButton {
     background-image: url(images/rock.png);
+    background-position: center center;
+    width: 150px;
+    height: 150px;
+    object-fit:scale-down;
+    margin: 40px;
+    border: 0px;
+    transition: 0.5s;
 
 } 
 
-.buttonContainer .paperButton {
+.buttonContainer #paperButton {
     background-image: url(images/paper.png);
+    background-position: center center;
+    width: 150px;
+    height: 150px;
+    object-fit:scale-down;
+    margin: 40px;
+
+    border: 0px;
+    transition: 0.5s;
 } 
 
-.buttonContainer .scissorButton {
+.buttonContainer #scissorButton {
     background-image: url(images/scissors.png);
+    background-position: center center;
+    width: 150px;
+    height: 150px;
+    object-fit:scale-down;
+    margin: 40px;
+    border: 0px;
+    transition: 0.5s;
 }
 
 .buttonContainer {
@@ -27,26 +50,40 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-}
-
-button {
-    background-position: center center;
-    width: 150px;
-    height: 150px;
-    object-fit:scale-down;
-    margin: 40px;
     background: none;
-    border: 0px;
-    transition: 0.5s;
+
+}
+    
+
+#gameOverFinalContainer {
+    display:flex;
+    justify-content: center;
+    transition: 2s;
+}
+.gameOver {
+
+    margin: 40px;
 }
 
+#gameOverContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(201, 31, 31, 0.288);
+    border-radius: 5px;
+    transition: 1s;
+    width: 800px;
+    margin: 50px;
+    outline: black;
+}
 
-
-button:hover {
+.selectionButton:hover {
     box-shadow:  0px 0px 5px black;
 }
 
-button:active {
+.selectionButton:active {
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     transform: scale(0.97);
 }
@@ -60,6 +97,47 @@ button:active {
 #title2 {
     font-size: 20px;
 }
+
+
+#gameOverPopup {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 50px;
+    background: none;
+    font-size: 35px;
+
+}
+#playAgainButton {
+display: flex;
+flex-direction:row;
+  background-color: #1db7cf;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75;
+  padding: 15px 32px;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 250px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
 
 
 

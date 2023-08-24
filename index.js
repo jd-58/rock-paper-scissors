@@ -9,6 +9,18 @@ const scoreDiv = document.querySelector('#scoreDiv')
 const tieDiv = document.querySelector('#tieDiv')
 const choicesDiv = document.querySelector('#choicesDiv')
 const resultDiv = document.querySelector('#resultDiv')
+const gameOverPopup = document.querySelector('#gameOverPopup')
+const playAgainButton = document.querySelector('#playAgainButton')
+const webpageBlur = document.querySelector('#webpage')
+const gameOverWindow = document.querySelector('#gameOverFinalContainer')
+const userChoiceButtons = document.getElementsByClassName('selectionButton')
+
+gameOverWindow.style.display ="none"
+
+
+playAgainButton.textContent = "Click to play again."
+
+gameOverPopup.textContent = "Game over."
 
 resultDiv.textContent = resultDisplayMessage
 
@@ -26,7 +38,18 @@ resultDisplay.textContent = resultMessage
 resultDisplay.addEventListener
 scoreDiv.appendChild(resultDisplay)
 
-
+function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
 
 rockButton.classList.add('rockButton')
 rockButton.addEventListener('click', () => {
@@ -47,11 +70,12 @@ rockButton.addEventListener('click', () => {
     }
     let resultMessage = "Score | " +  "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
-    let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
+    resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
     + " and the computer chose " + moves[computerNumber] + "."
     String(resultDisplayMessage)
     scoreDiv.textContent = resultMessage
     resultDiv.textContent = resultDisplayMessage 
+    gameOverCheck()
 })
 
 
@@ -72,6 +96,7 @@ paperButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
+    gameOverCheck()
     let resultMessage = "Score | " + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
@@ -99,6 +124,7 @@ scissorButton.addEventListener('click', () => {
     else {
         gameMessage = messages[3]
     }
+    gameOverCheck()
     let resultMessage = "Score | " + "Player: " + playerScore + "\n Computer: " + computerScore
     String(resultMessage) 
     let resultDisplayMessage = gameMessage + " You chose " + moves[playerNumber]
@@ -162,7 +188,35 @@ function getUserChoice() {
                 return(playerNumber)
             }
     }
+finalGameOverMessage = "n/a"
 
+function gameOverCheck() {
+    console.log("Player score is check: " + playerScore)
+    console.log("Computer score is check: " + computerScore)
+    if (playerScore == 5 || computerScore == 5) {
+        rockButton.disabled = true
+        paperButton.disabled = true
+        scissorButton.disabled = true
+        if (playerScore > computerScore) {
+            finalGameOverMessage = messages[0] + " You scored " + playerScore + " and the computer scored " 
+            + computerScore + ". Game over."
+            String(finalGameOverMessage)
+        }
+        else if (computerScore > playerScore) {
+            finalGameOverMessage = messages[1] + " You scored " + playerScore + " and the computer scored " 
+            + computerScore + ". Game over."
+            String(finalGameOverMessage)
+        } 
+        gameOverPopup.textContent = finalGameOverMessage
+        gameOverWindow.style.display ="flex"
+        webpageBlur.style.transition = "3s"
+        webpageBlur.style.filter = "blur(3px)"   
+        }
+
+    
+
+}  
+ 
 function playGame(playerNumber) {
             let gameMessage = "N/A"
             computerNumber = getComputerChoice()
@@ -189,16 +243,30 @@ function playGame(playerNumber) {
         
         }
 
-if (playerScore == 5) {
-    gameMessage = "You win the game!"
-    scoreDiv.textContent = resultMessage
-}
+        function resetScores() {
+            playerScore = 0
+            computerScore = 0
+            resultDisplayMessage = "Click a button to play!"
+            String(resultDisplayMessage)
+            resultMessage = "Score | Player: " + playerScore + "\n Computer: " + computerScore
+            String(resultMessage)
+        }
 
 
+        playAgainButton.addEventListener('click', () => {
+            webpageBlur.style.filter = "none"
+            gameOverWindow.style.display ="none"
+            resetScores()
+            console.log(resultMessage)
+            rockButton.disabled = false
+            paperButton.disabled = false
+            scissorButton.disabled = false
+            document.getElementById("resultDiv").textContent = resultDisplayMessage;
+            document.getElementById("scoreDiv").textContent = resultMessage;
+        })
 
     
         
-
 
 
     
